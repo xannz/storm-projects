@@ -1,6 +1,8 @@
-topology:
-    - name: WordCountTopology
-      jar: WordCount-1.0-SNAPSHOT.jar
-      topologyclass: com.microsoft.example.WordCountTopology
-      packaging: mvn package
-      repository: https://github.ugent.be/sborny/storm-projects/tree/master/WordCount.git
+--- 
+topology: 
+  - 
+    jar: WordCount-1.0-SNAPSHOT.jar
+    name: WordCountTopology
+    packaging: "mvn package"
+    repository: "https://github.ugent.be/sborny/storm-projects/tree/master/WordCount.git"
+    topologyclass: com.microsoft.example.WordCountTopology
