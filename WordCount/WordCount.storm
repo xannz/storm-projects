@@ -1,8 +1,6 @@
---- 
-topology: 
-  - 
-    jar: storm-signals-0.2.1-SNAPSHOT.jar
-    name: teststormsignals
-    packaging: "mvn package"
-    repository: "https://github.com/ptgoetz/storm-signals.git"
-    topologyclass: backtype.storm.contrib.signals.test.SignalTopology
+topology:
+- name: teststormsignals
+  jar: storm-signals-0.2.1-SNAPSHOT.jar
+  topologyclass: backtype.storm.contrib.signals.test.SignalTopology
+  packaging: "mvn package"
+  repository: https://github.com/ptgoetz/storm-signals.git
