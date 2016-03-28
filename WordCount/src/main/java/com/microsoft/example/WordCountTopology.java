@@ -33,25 +33,25 @@ public class WordCountTopology {
     conf.setDebug(true);
 
     //If there are arguments, we are running on a cluster
-    if (args != null && args.length > 0) {
+    //if (args != null && args.length > 0) {
       //parallelism hint to set the number of workers
       conf.setNumWorkers(3);
       //submit the topology
-      StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
-    }
+      StormSubmitter.submitTopology("WordCount", conf, builder.createTopology());
+    //}
     //Otherwise, we are running locally
-    else {
+   // else {
       //Cap the maximum number of executors that can be spawned
       //for a component to 3
-      conf.setMaxTaskParallelism(3);
+     // conf.setMaxTaskParallelism(3);
       //LocalCluster is used to run locally
-      LocalCluster cluster = new LocalCluster();
+     // LocalCluster cluster = new LocalCluster();
       //submit the topology
-      cluster.submitTopology("word-count", conf, builder.createTopology());
+     // cluster.submitTopology("word-count", conf, builder.createTopology());
       //sleep
-      Thread.sleep(10000);
+     // Thread.sleep(10000);
       //shut down the cluster
-      cluster.shutdown();
-    }
+     // cluster.shutdown();
+   // }
   }
 }
